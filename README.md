@@ -1,4 +1,4 @@
-# Click on link --> [Klicky](http://SvitlanaTsupryk-jul18.github.io/klicky)
+# Click on link --> [Klicky](http://SvitlanaTsupryk-jul18.github.io/Klicky)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
