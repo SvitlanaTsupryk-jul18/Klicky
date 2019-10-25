@@ -1,7 +1,11 @@
 import React from "react";
 
 class Form extends React.Component {
-  state = {};
+  state = {
+    debitCard: "Credit or Debit",
+    cardType: "",
+    name: ""
+  };
   render() {
     return (
       <div>
@@ -12,6 +16,29 @@ class Form extends React.Component {
         </p>
         <form>
           <h3>Billing Information</h3>
+          {/* <div className="row_item">
+            <select
+              name="debitCard"
+              value={ebitCard.value}
+              onChange={event => this.selectItem(event.target)}
+            >
+              <option value="debit">ДЕРЖАВНЕ ПІДПРИЄМСТВО</option>
+              <option value="credit">ІНШІ ОРГАНІЗАЦІЙНО-ПРАВОВІ ФОРМИ</option>
+            </select>
+          </div>
+          <p>
+            Name on Card <input type="checkbox"></input>
+          </p>
+          <input
+            name="name"
+            type="text"
+            id="name"
+            onChange={event => name.change(event.target.value || undefined)}
+            onFocus={() => name.focus()}
+            value={name.value || ""}
+            placeholder="Jimmy Santos"
+            className={this.state.name.active ? "active--input" : ""}
+          /> */}
         </form>
       </div>
     );

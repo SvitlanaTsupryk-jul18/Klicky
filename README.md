@@ -1,3 +1,5 @@
+# Click on link --> [Klicky](http://SvitlanaTsupryk-jul18.github.io/klicky)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
