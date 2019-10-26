@@ -126,14 +126,30 @@ body {
     outline: none;
     height: 20px;
     cursor: pointer;
-    &:hover .details__arrow {
-      transform: rotate(180deg);
-    }
+    // &:hover .details__arrow {
+    //   transform: rotate(90deg);
+    // }
   }
   &__arrow {
     width: 16px;
     height: 16px;
     color: #9b9b9b;
-    transition: all 0.3s;
+    transition: rotate(90deg) 0.3s;
+  }
+}
+
+.cards {
+  &__card {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin-right: 5px;
+    & + img {
+      cursor: pointer;
+    }
+    &:checked + img {
+      outline: 2px solid $mainColor;
+    }
   }
 }

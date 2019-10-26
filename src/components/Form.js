@@ -1,44 +1,64 @@
 import React from "react";
+import Cards from "./Cards";
 
 class Form extends React.Component {
   state = {
     debitCard: "Credit or Debit",
     cardType: "",
-    name: ""
+    userName: ""
   };
+
+  handleChange = target => {
+    this.setState({
+      ...this.state,
+      [target.name]: target.value
+    });
+  };
+
+  handleInputChange = event => {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
+    const { debitCard, cardType, userName } = this.state;
+    console.log(this.state);
     return (
-      <div>
-        <p>
+      <div className="charge">
+        <p className="charge__text">
           We're pretty unique in that you don't need to pay upfront to
           advertise. Add a payment method info so that we can get paid when we
           make a sale.
         </p>
-        <form>
-          <h3>Billing Information</h3>
-          {/* <div className="row_item">
+        <form className="form">
+          <h3 className="form__title">Billing Information</h3>
+          <div className="form__select">
             <select
               name="debitCard"
-              value={ebitCard.value}
-              onChange={event => this.selectItem(event.target)}
+              value={debitCard.value}
+              onChange={event => this.handleChange(event.target)}
             >
-              <option value="debit">ДЕРЖАВНЕ ПІДПРИЄМСТВО</option>
-              <option value="credit">ІНШІ ОРГАНІЗАЦІЙНО-ПРАВОВІ ФОРМИ</option>
+              <option value="credit">Credit or Debit card</option>
+              <option value="debit">Debit card</option>
+              <option value="credit">Credit card</option>
             </select>
           </div>
-          <p>
-            Name on Card <input type="checkbox"></input>
-          </p>
+          <Cards handleChange={this.handleChange} cardType={cardType} />
+
           <input
-            name="name"
+            name="userName"
             type="text"
-            id="name"
-            onChange={event => name.change(event.target.value || undefined)}
-            onFocus={() => name.focus()}
-            value={name.value || ""}
+            id="userName"
+            onChange={event => this.handleChange(event.target)}
+            value={userName.value || ""}
             placeholder="Jimmy Santos"
-            className={this.state.name.active ? "active--input" : ""}
-          /> */}
+            // className={userName.active ? "active--input" : ""}
+          />
         </form>
       </div>
     );

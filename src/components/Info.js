@@ -8,25 +8,49 @@ const Info = ({ setInfo, sendInfo }) => {
       <main className="info__main">
         <Details
           children={<p>Some Text1</p>}
-          title={"How will customers contact you?"}
+          title={[
+            "How will customers ",
+            <span className="bold" key="1">
+              contact
+            </span>,
+            " you?"
+          ]}
           name={"customersContact"}
           setInfo={setInfo}
         />
         <Details
           children={<p>Some Text2</p>}
-          title={"How will customers pay you?"}
+          title={[
+            "How will customers ",
+            <span className="bold" key="2">
+              pay
+            </span>,
+            "  you?"
+          ]}
           name={"customersPay"}
           setInfo={setInfo}
         />
         <Details
-          title={"How will Klickly charge you?"}
+          title={[
+            "How will Klickly ",
+            <span className="bold" key="3">
+              charge
+            </span>,
+            " you?"
+          ]}
           name={"KlickyCharge"}
           setInfo={setInfo}
           children={<Form />}
         />
         <Details
           children={<p>Some Text4</p>}
-          title={"How will Klickly contact you?"}
+          title={[
+            "How will Klickly ",
+            <span className="bold" key="4">
+              contact
+            </span>,
+            " you?"
+          ]}
           name={"KlickyContact"}
           setInfo={setInfo}
         />
