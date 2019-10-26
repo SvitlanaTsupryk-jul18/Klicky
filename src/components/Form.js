@@ -1,32 +1,36 @@
 import React from "react";
 import Cards from "./Cards";
+// import Input from "./Input";
+import Select from "./Select";
 
 class Form extends React.Component {
   state = {
     debitCard: "Credit or Debit",
     cardType: "",
-    userName: ""
+    userName: "",
+    cardNumber: "",
+    cardCVV: "",
+    cardMonth: "",
+    cardYear: ""
   };
 
   handleChange = target => {
     this.setState({
-      ...this.state,
+      // ...this.state,
       [target.name]: target.value
     });
   };
 
-  handleInputChange = event => {
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  };
-
   render() {
-    const { debitCard, cardType, userName } = this.state;
+    const {
+      debitCard,
+      cardType,
+      userName,
+      cardNumber,
+      cardCVV,
+      cardMonth,
+      cardYear
+    } = this.state;
     console.log(this.state);
     return (
       <div className="charge">
@@ -37,28 +41,83 @@ class Form extends React.Component {
         </p>
         <form className="form">
           <h3 className="form__title">Billing Information</h3>
-          <div className="form__select">
-            <select
-              name="debitCard"
-              value={debitCard.value}
-              onChange={event => this.handleChange(event.target)}
-            >
-              <option value="credit">Credit or Debit card</option>
-              <option value="debit">Debit card</option>
-              <option value="credit">Credit card</option>
-            </select>
-          </div>
+          <Select
+            name={"debitCard"}
+            value={debitCard}
+            handleChange={this.handleChange}
+            className="select__input"
+            options={[
+              { value: "credit", label: "Credit or Debit card" },
+              { value: "debit", label: "Debit card" },
+              { value: "credit", label: "Credit card" }
+            ]}
+          />
           <Cards handleChange={this.handleChange} cardType={cardType} />
-
           <input
             name="userName"
             type="text"
             id="userName"
             onChange={event => this.handleChange(event.target)}
-            value={userName.value || ""}
+            value={userName.value}
             placeholder="Jimmy Santos"
             // className={userName.active ? "active--input" : ""}
           />
+          <div className="form__card-number">
+            <input
+              name="cardNumber"
+              type="text"
+              maxLength="16"
+              minLength="16"
+              placeholder="e.g. 1234 1234 1234 1234"
+              value={cardNumber.value}
+              onChange={event => this.handleChange(event.target)}
+            />
+            <input
+              name="cardCVV"
+              type="text"
+              maxLength="3"
+              minLength="3"
+              placeholder="e.g. 243"
+              value={cardCVV.value}
+              onChange={event => this.handleChange(event.target)}
+            />
+            <Select
+              name={"cardMonth"}
+              value={cardMonth}
+              handleChange={this.handleChange}
+              className="select__input"
+              options={[
+                { value: "Month", label: "Month" },
+                { value: "1", label: "January" },
+                { value: "2", label: "February" },
+                { value: "3", label: "March" },
+                { value: "4", label: "April" },
+                { value: "5", label: "May" },
+                { value: "6", label: "June" },
+                { value: "7", label: "July" },
+                { value: "8", label: "August" },
+                { value: "9", label: "September" },
+                { value: "10", label: "October" },
+                { value: "11", label: "November" },
+                { value: "12", label: "December" }
+              ]}
+            />
+            <Select
+              name={"cardYear"}
+              value={cardYear}
+              handleChange={this.handleChange}
+              className="select__input"
+              options={[
+                { value: "Year", label: "Year" },
+                { value: "2019", label: "2019" },
+                { value: "2020", label: "2020" },
+                { value: "2021", label: "2021" },
+                { value: "2022", label: "2022" },
+                { value: "2023", label: "2023" },
+                { value: "2024", label: "2024" }
+              ]}
+            />
+          </div>
         </form>
       </div>
     );

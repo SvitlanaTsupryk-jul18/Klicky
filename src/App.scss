@@ -138,18 +138,61 @@ body {
   }
 }
 
+.select {
+  &__input {
+    border-radius: 4px;
+    border: solid 1px #ced0da;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+    padding: 8px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline-color: $blueColor;
+    padding-right: 50px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    border-left: 1px solid #ced0da;
+    width: 20px;
+    height: 36px;
+    padding-left: 10px;
+    vertical-align: middle;
+    transform: translateX(-30px);
+    pointer-events: none;
+  }
+}
+
 .cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  &__title {
+    color: #9b9b9b;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
   &__card {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
-    margin-right: 5px;
     & + img {
       cursor: pointer;
+      margin-right: 5px;
     }
     &:checked + img {
       outline: 2px solid $mainColor;
     }
   }
+}
+
+input {
+  border: solid 1px #c6c6c6;
+  padding: 14px;
+  border-radius: 4px;
+  margin: 10px 0;
 }
