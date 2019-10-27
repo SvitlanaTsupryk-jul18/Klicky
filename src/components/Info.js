@@ -61,7 +61,7 @@ const Info = ({ setInfo, sendInfo }) => {
         </button>
         <button
           type="button"
-          className="info__btn btn--dark"
+          className="info__btn btn btn--dark"
           onClick={sendInfo}
         >
           Launch

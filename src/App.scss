@@ -62,9 +62,20 @@ body {
 .info {
   margin: 0 20px 0 7px;
   width: 100%;
+  &__btn {
+    height: 32px;
+    border-radius: 3px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 30px;
+    margin-top: 50px;
+  }
 }
 
 .details {
+  margin-bottom: 14px;
   &--active {
     border-radius: 4px;
     border: solid 1px $mainColor;
@@ -93,7 +104,6 @@ body {
     border-radius: 2px;
     border: solid 1px #dfe2e5;
     background-color: #f8f8f8;
-    margin-bottom: 13px;
     display: flex;
     justify-content: space-between;
   }
@@ -136,9 +146,48 @@ body {
     color: #9b9b9b;
     transition: rotate(90deg) 0.3s;
   }
+  &__buttons {
+    padding: 20px;
+    text-align: right;
+  }
+  &__btn {
+    height: 36px;
+    border-radius: 4px;
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
+
+.btn {
+  width: 140px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c6c6c6;
+  border: solid 1px #c6c6c6;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  &--dark {
+    background-color: $liteGreyColor;
+    color: white;
+  }
+  &:hover,
+  &:active {
+    color: white;
+    border: 1 px solid $mainColor;
+    background-color: $mainColor;
+  }
+}
+.active {
+  color: white;
+  border: 1 px solid $mainColor;
+  background-color: $mainColor;
 }
 
 .select {
+  display: flex;
+  margin-right: -20px;
   &__input {
     border-radius: 4px;
     border: solid 1px #ced0da;
@@ -152,6 +201,16 @@ body {
     cursor: pointer;
     outline-color: $blueColor;
     padding-right: 50px;
+    margin-bottom: 10px;
+
+    &--width {
+      width: 110px;
+      height: 3.8em;
+
+      + img.select__arrow {
+        height: 3.2em;
+      }
+    }
   }
 
   &__arrow {
@@ -170,10 +229,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-top: 5px;
+  padding-bottom: 10px;
   &__title {
     color: #9b9b9b;
     font-size: 12px;
     text-transform: uppercase;
+    margin-bottom: 10px;
   }
   &__card {
     position: absolute;
@@ -190,9 +252,50 @@ body {
   }
 }
 
-input {
-  border: solid 1px #c6c6c6;
-  padding: 14px;
-  border-radius: 4px;
-  margin: 10px 0;
+.charge {
+  padding: 20px;
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 5px;
+  }
 }
+
+.form {
+  &__title {
+    font-weight: bold;
+    padding: 30px 0;
+  }
+  &__input {
+    border: solid 1px #c6c6c6;
+    padding: 14px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    &--large {
+      width: 100%;
+    }
+    &--cvv {
+      width: 90px;
+    }
+  }
+  &__label {
+    color: #9b9b9b;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 20px 0 10px 0;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+  }
+  &__card-number {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+// .select {
+//   padding-bottom: 25px;
+// }

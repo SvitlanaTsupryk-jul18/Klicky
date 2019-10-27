@@ -74,7 +74,7 @@ class Details extends React.Component {
               </button>
               <button
                 type="button"
-                className="details__btn btn"
+                className="details__btn btn active"
                 onClick={this.saveDetails}
               >
                 Save
