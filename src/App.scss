@@ -61,7 +61,7 @@ body {
 
 .info {
   margin: 0 20px 0 7px;
-  width: 100%;
+  width: calc(100% - 300px);
   &__btn {
     height: 32px;
     border-radius: 3px;
@@ -296,6 +296,80 @@ body {
   }
 }
 
-// .select {
-//   padding-bottom: 25px;
-// }
+@media only screen and (max-width: 1040px) {
+  .form__card-number {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 700px) {
+  .page {
+    padding: 0 20px;
+  }
+  .content__aside {
+    flex: 1 0 200px;
+  }
+  .info {
+    width: calc(100% - 200px);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .page {
+    padding: 0 20px;
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  .info {
+    margin: 20px 0 0 0;
+    width: 100%;
+    order: 1;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  body {
+    font-size: 14px;
+  }
+  .page__header h1 {
+    font-size: 20px;
+  }
+  .content__aside {
+    flex: 1 0 250px;
+  }
+  .details {
+    &__header,
+    .cards {
+      flex-wrap: wrap;
+    }
+    &__title {
+      font-size: 16px;
+      padding-bottom: 10px;
+    }
+    &__buttons {
+      text-align: justify;
+    }
+  }
+  .info__footer,
+  .form__title {
+    padding: 10px 0;
+  }
+  .form__input--cvv {
+    width: 100%;
+  }
+  .select__input {
+    width: 100%;
+  }
+  .btn {
+    width: 100px;
+  }
+  .form__label {
+    padding-top: 10px;
+  }
+  .select__input--width {
+    width: 200px;
+    height: 3.2em;
+  }
+}
